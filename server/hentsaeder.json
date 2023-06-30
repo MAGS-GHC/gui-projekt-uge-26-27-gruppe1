@@ -1,0 +1,75 @@
+{
+    "sektionsnavn": "M",
+    "saeder":[
+    {
+        "id": 11,
+        "pris": 100,
+        "raekkeid": 1,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 12,
+        "pris": 100,
+        "raekkeid": 1,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 13,
+        "pris": 100,
+        "raekkeid": 1,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 14,
+        "pris": 100,
+        "raekkeid": 1,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 25,
+        "pris": 100,
+        "raekkeid": 2,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 26,
+        "pris": 100,
+        "raekkeid": 2,
+        "saedestatus": "optaget",
+        "ordreid": 1
+    },
+    {
+        "id": 27,
+        "pris": 100,
+        "raekkeid": 2,
+        "saedestatus": "ødelagt",
+        "ordreid": null
+    },
+    {
+        "id": 28,
+        "pris": 100,
+        "raekkeid": 2,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 29,
+        "pris": 100,
+        "raekkeid": 2,
+        "saedestatus": "ledig",
+        "ordreid": null
+    },
+    {
+        "id": 30,
+        "pris": 100,
+        "raekkeid": 3,
+        "saedestatus": "ledig",
+        "ordreid": null
+    }
+]
+}
