@@ -12,6 +12,8 @@ const inLineCss = require('nodemailer-juice');
 const post = require('./Componenter/post');
 const NyOrdre = require('./Componenter/NyOrdre');
 const betaltbilletter = require('./Componenter/ordreBetalt');
+const hent = require('./Componenter/hentliste');
+const saede = require('./Componenter/opdaterSaeder');
 
 const dbUsername = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
@@ -56,7 +58,7 @@ const opts = {
     secretOrKey: process.env.SECRET_OR_KEY
 };*/
 
-const PORT = process.env.PORT || 3005;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.static(__dirname, {
     extensions: ["html", "htm", "gif", "png"],
@@ -94,9 +96,11 @@ app.post(serverPath + '/opretsaeder', (req, res) => { post.handleTablePosts(req,
 
 app.post(serverPath + '/nyordre', (req, res) => { NyOrdre.opretetOrdre(req, res, knexDb, dotenv) })//opret ordre
 
+app.put(serverPath + '/opdatersaeder/:saedeid', (req, res) => { saede.opdatersaede(req, res, knexDb, dotenv) })
+
 app.put(serverPath + '/betalt', (req, res) => { betaltbilletter.betaltbilletter(req, res, knexDb, dotenv, nodemailer, inLineCss) })//betal billetter
 
-app.get(serverPath + '/hentsaeder', (req, res) => { post.handleTablePosts(req, res, knexDb, jwt, dotenv) })//hent sæder
+app.get(serverPath + '/hentsaeder', (req, res) => { hent.hentsaeder(req, res, knexDb) })//hent sæder
 
 app.listen(PORT, () => {
     console.log(`App is running on ${PORT}`)
