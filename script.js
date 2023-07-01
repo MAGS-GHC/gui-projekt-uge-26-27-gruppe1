@@ -1,20 +1,4 @@
 // Klassen af sæder 
-let Objekt = []
-let seatsData = []
-async function APIKald() {
-  const url = "https://www.itsmurf-servers.dk/vff/hentsaeder";
-  var req = new Request(url);
-  const response = await fetch(req);
-  Objekt = await response.json();
-  seatsData = Objekt.saeder?.map((saeder) => {
-    return { id: saeder.id, price: saeder.pris }
-  })
-  console.log(seatsData)
-}
-
-APIKald()
-// Antal sæder 
-
 
 class Seat {
   constructor(id, price) {
@@ -203,6 +187,23 @@ class Stadion {
   { id: 79, price: 8 },
   { id: 80, price: 15 },
 ]*/;
+let Objekt = []
+let seatsData = []
+//let stadion;
+//henter sæder
+async function APIKald() {
+  const url = "https://www.itsmurf-servers.dk/vff/hentsaeder";
+  var req = new Request(url);
+  const response = await fetch(req);
+  Objekt = await response.json();
+  seatsData = Objekt.saeder?.map((saeder) => {
+    return { id: saeder.id, price: saeder.pris }
+  })
+  console.log(seatsData);
+  //stadion.createSeats()
+}
+
+
 
 // Laver en instans af stadion klassen
 const stadion = new Stadion("seats-container", seatsData);
