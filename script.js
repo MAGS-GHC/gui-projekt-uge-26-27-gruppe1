@@ -191,7 +191,7 @@ let Objekt = []
 let seatsData = []
 //let stadion;
 //henter sæder
-async function APIKald() {
+async function HentSaeder() {
   const url = "https://www.itsmurf-servers.dk/vff/hentsaeder";
   var req = new Request(url);
   const response = await fetch(req);
@@ -203,7 +203,54 @@ async function APIKald() {
   //stadion.createSeats()
 }
 
+async function Opdatersaeder(saedeid, saedestatus, ordreid) {
+  const url = "https://www.itsmurf-servers.dk/vff/opdatersaeder" + saedeid;
 
+  const data = {
+    "saedestatus": saedestatus,
+    "ordreid": ordreid
+  }
+
+  var req = new Request(url);
+  const response = await fetch(req, {
+    Method: 'PUT',
+    Headers: {
+      Accept: 'application.json',
+      'Content-Type': 'application/json'
+    },
+    Body: data
+  });
+  Objekt = await response.json();
+
+  console.log(seatsData);
+  //stadion.createSeats()
+}
+
+async function Bestilsaeder(saedeid, beloeb, antal, saedestatus, ordrestatus, navn, email) {
+  const url = "https://www.itsmurf-servers.dk/vff/nyordre";
+
+  const data = {
+    "navn": navn,
+    "ordrestatus": ordrestatus,
+    "beloeb": beloeb,
+    "antal": antal,
+    "email": email
+  }
+
+  var req = new Request(url);
+  const response = await fetch(req, {
+    Method: 'POST',
+    Headers: {
+      Accept: 'application.json',
+      'Content-Type': 'application/json'
+    },
+    Body: data
+  });
+  const responseData = await response.json();
+
+  Opdatersaeder(saedeid, saedestatus, responseData)
+  //stadion.createSeats()
+}
 
 // Laver en instans af stadion klassen
 const stadion = new Stadion("seats-container", seatsData);
