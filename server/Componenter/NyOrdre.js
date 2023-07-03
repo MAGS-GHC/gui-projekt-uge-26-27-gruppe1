@@ -10,7 +10,7 @@ const opretetOrdre = (req, res, knex, dotenv) => {
     knex(ordre)
         .insert({ navn, email, beloeb, antal, ordrestatus, madbillet: false })
         .then((result) => {
-            res.status(200).send(result[0])
+            res.status(200).send(result[0] + "")
         })
         .catch(err => res.status(400).json(err))
 }
