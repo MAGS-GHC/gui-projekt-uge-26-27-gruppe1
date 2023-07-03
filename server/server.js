@@ -5,15 +5,16 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-//const bcrypt = require('bcryptjs');
 
-//const nodemailer = require('nodemailer');
-//const inLineCss = require('nodemailer-juice');
-const upload = require('express-fileupload')
+const nodemailer = require('nodemailer');
+const inLineCss = require('nodemailer-juice');
 
 const post = require('./Componenter/post');
+const NyOrdre = require('./Componenter/NyOrdre');
+const betaltbilletter = require('./Componenter/ordreBetalt');
+const hent = require('./Componenter/hentliste');
+const saede = require('./Componenter/opdaterSaeder');
 
-const path = require('path')
 const dbUsername = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
 
@@ -24,11 +25,11 @@ if (!dbUsername) {
 if (!dbPassword) {
     throw new Error('DB_PASSWORD environment variables must be set');
 }
-
-const passport = require('passport');
+//til bruger login
+/*const passport = require('passport');
 const passportJwt = require('passport-jwt');
 const JwtStrategy = passportJwt.Strategy;
-const ExtractJwt = passportJwt.ExtractJwt;
+const ExtractJwt = passportJwt.ExtractJwt;*/
 const knex = require('knex');
 const knexDb = knex({
     client: 'mysql2',
@@ -41,26 +42,23 @@ const knexDb = knex({
     }
 });
 
-const bookshelf = require('bookshelf');
+//til bruger login
+/*const bookshelf = require('bookshelf');
 const securePassword = require('./middleware/bookshelf-secure-password');
 const db = bookshelf(knexDb);
 db.plugin(securePassword);
 
 const User = db.Model.extend({
-    tableName: 'brugere',
+    tableName: 'kunde',
     hasSecurePassword: true
 });
-
-const PORT = process.env.PORT || 3005;
 
 const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.SECRET_OR_KEY
-};
+};*/
 
-app.use(upload({
-    createParentPath: true
-}));
+const PORT = process.env.PORT || 3001;
 
 app.use(express.static(__dirname, {
     extensions: ["html", "htm", "gif", "png"],
@@ -70,29 +68,25 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
 
-const strategy = new JwtStrategy(opts, (payload, next) => {
-    User.forge({ role: payload.role, id: payload.id }).fetch().then(res => {
+//til bruger login
+/*const strategy = new JwtStrategy(opts, (payload, next) => {
+    User.forge({ id: payload.id }).fetch().then(res => {
         next(null, res);
     });
 });
 
-const serverPath = '/vff'
-
-//const dateZero = (d) => d < 10 ? '0' + d : '' + d
-
-//const fileName = dateZero(new Date().getDate()) + dateZero(new Date().getMonth() + 1) + new Date().getFullYear() + '_'
-//console.log(fileName)
 
 passport.use(strategy);
-app.use(passport.initialize());
+app.use(passport.initialize());*/
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(cors());
 
-//const auth = passport.authenticate('jwt', { session: false });
+const serverPath = '/vff'
 
-//bruger
+//til bruger login
+//const auth = passport.authenticate('jwt', { session: false });
 
 //app.post(serverPath + '/newuser', auth, async (req, res) => { register.handleRegister(req, res, User, jwt, dotenv, knexDb, fileName) });//opret bruger
 
@@ -100,7 +94,13 @@ app.use(cors());
 
 app.post(serverPath + '/opretsaeder', (req, res) => { post.handleTablePosts(req, res, knexDb, jwt, dotenv) })//opret sæder
 
-app.get(serverPath + '/hentsaeder', (req, res) => { post.handleTablePosts(req, res, knexDb, jwt, dotenv) })//hent sæder
+app.post(serverPath + '/nyordre', (req, res) => { NyOrdre.opretetOrdre(req, res, knexDb, dotenv) })//opret ordre
+
+app.put(serverPath + '/opdatersaeder/:saedeid', (req, res) => { saede.opdatersaede(req, res, knexDb, dotenv) })
+
+app.put(serverPath + '/betalt', (req, res) => { betaltbilletter.betaltbilletter(req, res, knexDb, dotenv, nodemailer, inLineCss) })//betal billetter
+
+app.get(serverPath + '/hentsaeder', (req, res) => { hent.hentsaeder(req, res, knexDb) })//hent sæder
 
 app.listen(PORT, () => {
     console.log(`App is running on ${PORT}`)
