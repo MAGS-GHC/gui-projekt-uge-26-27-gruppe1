@@ -196,13 +196,12 @@ async function HentSaeder() {
   var req = new Request(url);
   const response = await fetch(req);
   Objekt = await response.json();
-  seatsData = Objekt.saeder?.map((saeder) => {
-    return { id: saeder.id, price: saeder.pris }
-  })
+  seatsData = Objekt.saeder
   console.log(seatsData);
-  //stadion.createSeats()
+  stadion.createSeatElement
+  return seatsData
 }
-
+HentSaeder()
 async function Opdatersaeder(saedeid, saedestatus, ordreid) {
   const url = "https://www.itsmurf-servers.dk/vff/opdatersaeder" + saedeid;
 
