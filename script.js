@@ -4,6 +4,7 @@ class Seat {
   constructor(id, price, saedestatus) {
     this.id = id;
     this.price = price;
+    this.saedestatus = saedestatus;
     this.booked = false;
     this.element = this.createSeatElement();
     this.element.addEventListener("click", () => this.toggleBooking());
@@ -28,7 +29,7 @@ class Seat {
     } else {
       this.selected = true;
       this.element.classList.add("selected");
-      console.log(`Seat ${this.id} is selected. Price: ${this.price}.`);
+      console.log(`Seat ${this.id} is selected. Price: ${this.price}. Availabilty: ${this.saedestatus}`);
     }
   }
 
