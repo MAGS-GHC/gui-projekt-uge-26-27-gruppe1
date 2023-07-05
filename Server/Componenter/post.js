@@ -16,21 +16,15 @@ const handleTablePosts = (req, res, knex, jwt, dotenv) => {
 	}
 
 	if (!chef) { return res.status(403).send('nix'); }*/
-	const sektion = 'sektion'
-	const raekke = 'raekke'
-	const saede = 'saede'
-	const { sektionsnavn, pris, status, raekkeid, saedeid } = req.body;
-	knex(sektion)
-		.insert(sektionsnavn).then((sektionid) => {
-			knex(raekke)
-				.insert({ id: raekkeid, pris, sektionsid: sektionid.id })
-		}).then(() => {
-			knex(saede)
-				.insert({ id: saedeid, status, raekkeid: raekkeid })
-		}).then((result) => {
-			res.status(200).send(result)
+
+	const { tabelnavn, tabelliste } = req.body;
+
+	knex(tabelnavn)
+		.insert(tabelliste)
+		.then((result) => {
+			res.status(200).send(result + "")
 		})
-		.catch(err => res.status(400).json(err))
+		.catch(err => res.status(400).json(err));
 }
 
 module.exports = {
