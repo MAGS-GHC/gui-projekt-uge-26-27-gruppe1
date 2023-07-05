@@ -1,7 +1,7 @@
 // Klassen af sæder 
 let stadion;
 class Seat {
-  constructor(id, price) {
+  constructor(id, price, saedestatus) {
     this.id = id;
     this.price = price;
     this.booked = false;
@@ -65,8 +65,8 @@ class Stadion {
 
   createSeats(seatsData) {
     for (const seatData of seatsData) {
-      const { id, price } = seatData;
-      const seat = new Seat(id, price);
+      const { id, price, saedestatus } = seatData;
+      const seat = new Seat(id, price, saedestatus);
       this.seats.push(seat);
     }
   }
@@ -140,6 +140,7 @@ async function Opdatersaeder(saedeid, saedestatus, ordreid) {
     },
     Body: data
   });
+  const responseData = await response.json();
 }
 
 async function Bestilsaeder(saedeid, beloeb, antal, saedestatus, ordrestatus, navn, email) {
