@@ -26,10 +26,10 @@ if (!dbPassword) {
     throw new Error('DB_PASSWORD environment variables must be set');
 }
 //til bruger login
-/*const passport = require('passport');
+const passport = require('passport');
 const passportJwt = require('passport-jwt');
 const JwtStrategy = passportJwt.Strategy;
-const ExtractJwt = passportJwt.ExtractJwt;*/
+const ExtractJwt = passportJwt.ExtractJwt;
 const knex = require('knex');
 const knexDb = knex({
     client: 'mysql2',
@@ -43,7 +43,7 @@ const knexDb = knex({
 });
 
 //til bruger login
-/*const bookshelf = require('bookshelf');
+const bookshelf = require('bookshelf');
 const securePassword = require('./middleware/bookshelf-secure-password');
 const db = bookshelf(knexDb);
 db.plugin(securePassword);
@@ -56,7 +56,7 @@ const User = db.Model.extend({
 const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.SECRET_OR_KEY
-};*/
+};
 
 const PORT = process.env.PORT || 3001;
 
@@ -69,7 +69,7 @@ app.get('/', (req, res) => {
 })
 
 //til bruger login
-/*const strategy = new JwtStrategy(opts, (payload, next) => {
+const strategy = new JwtStrategy(opts, (payload, next) => {
     User.forge({ id: payload.id }).fetch().then(res => {
         next(null, res);
     });
@@ -77,7 +77,7 @@ app.get('/', (req, res) => {
 
 
 passport.use(strategy);
-app.use(passport.initialize());*/
+app.use(passport.initialize());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
@@ -86,11 +86,11 @@ app.use(cors());
 const serverPath = '/vff'
 
 //til bruger login
-//const auth = passport.authenticate('jwt', { session: false });
+const auth = passport.authenticate('jwt', { session: false });
 
-//app.post(serverPath + '/newuser', auth, async (req, res) => { register.handleRegister(req, res, User, jwt, dotenv, knexDb, fileName) });//opret bruger
+app.post(serverPath + '/newuser', auth, async (req, res) => { register.handleRegister(req, res, User, jwt, dotenv, knexDb, fileName) });//opret bruger
 
-//app.post(serverPath + '/login', (req, res) => { signin.handleSignin(req, res, knexDb, bcrypt, jwt, dotenv) });//login
+app.post(serverPath + '/login', (req, res) => { signin.handleSignin(req, res, knexDb, bcrypt, jwt, dotenv) });//login
 
 app.post(serverPath + '/opretsaeder', (req, res) => { post.handleTablePosts(req, res, knexDb, jwt, dotenv) })//opret sæder
 

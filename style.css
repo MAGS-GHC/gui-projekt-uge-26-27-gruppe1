@@ -17,10 +17,10 @@
   }
   
   .seat.selected {
-    background-color: blue;
+    background-color: rgb(28, 149, 12);;
   }
   
   .seat.booked {
-    background-color: red;
+    background-color: rgb(166, 22, 22);
   }
   

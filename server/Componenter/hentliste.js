@@ -4,7 +4,7 @@ const hentsaeder = (req, res, db) => {
         .select('id', 'sektionnavn')
         .then(sektion => {
             db('raekke').join('saede', 'raekke.id', '=', 'saede.raekkeid')
-                .select('raekke.id as raekkeid', 'raekke.pris', 'saede.id', 'saede.saedestatus', 'saede.ordreid').where('raekke.sektionid', sektion[0].id).as('raekke')
+                .select('raekke.id as raekkeid', 'raekke.pris as price', 'saede.id', 'saede.saedestatus', 'saede.ordreid').where('raekke.sektionsid', sektion[0].id).as('raekke')
                 .then((saede) => {
                     const hentetdata = {
                         "sektionsnavn": sektion[0].sektionnavn,
