@@ -57,6 +57,11 @@ const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.SECRET_OR_KEY
 };
+const sletmidlertidigbruger = () => {
+    console.log('bøh')
+}
+
+setInterval(sletmidlertidigbruger, 36000000)//10 timer
 
 const PORT = process.env.PORT || 3001;
 
