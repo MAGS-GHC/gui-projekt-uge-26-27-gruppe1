@@ -1,12 +1,20 @@
-*{
-    text-align: center;
-    
+body{
+background-color: rgb(44, 40, 40);
 }
-#seats-container {
-    display: flex;
+h1{
+  color: #e9e1e1;
+  text-align: center;
+}
+
+
+
+
+
+.seats-container {
+    display: flexbox;
     flex-wrap: wrap;
     gap: 10px;
-  }
+} 
   
   .seat {
     width: 25px;
@@ -24,3 +32,33 @@
     background-color: rgb(166, 22, 22);
   }
   
+  .SektionM{
+    background-color: #00685b; /* Green - kører samme farve og placering som Stadion.png*/
+    width: 320px;
+    height: 180px;
+    left: 418px;
+    top: 110px;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    border-left: 1px white solid;
+    border-top: 1px white solid;
+    border-right: 1px white solid;
+    border-bottom: 1px white solid;
+    transition: background-color 0.3s ease;
+
+  }
+
+  .SektionM:hover{
+    background-color: rgb(190, 233, 183);
+  }
+  .M {
+    left: 300px;
+    top: 230px;
+    position: absolute;
+    color: white;
+    font-size: 45px;
+    font-family: Gravity;
+    font-weight: 700;
+    word-wrap: break-word
+  }
