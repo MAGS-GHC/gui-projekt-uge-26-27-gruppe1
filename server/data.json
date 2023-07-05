@@ -1,0 +1,1097 @@
+{           
+
+"tabelnavn": "saede",
+        "tabelliste": [ 
+        {
+
+            "id": 1,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 2,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 3,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 4,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 5,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 6,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 7,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 8,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 9,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 10,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+        {
+
+            "id": 15,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 16,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 17,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 18,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 19,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 20,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 21,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 22,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 23,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 24,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 25,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 26,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 27,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 28,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 29,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 30,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 31,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 32,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 33,
+
+            "raekkeid": 1,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+        {
+
+            "id": 1,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 2,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 3,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 4,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 5,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 6,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 7,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 8,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 9,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 10,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 11,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 12,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 13,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 14,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 15,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 16,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 17,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 18,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 19,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 20,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 21,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 22,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 23,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 24,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 30,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 31,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 32,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },
+
+        {
+
+            "id": 33,
+
+            "raekkeid": 2,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+        },              
+        {
+
+             "id": 1,
+
+             "raekkeid": 3,
+
+             "saedestatus": "ledig",
+
+             "ordreid":null
+
+         },
+
+         {
+
+             "id": 2,
+
+             "raekkeid": 3,
+
+             "saedestatus": "ledig",
+
+             "ordreid":null
+
+         },  
+
+         {
+
+             "id": 3,
+
+             "raekkeid": 3,
+
+             "saedestatus": "ledig",
+
+             "ordreid":null
+
+         },
+
+         {
+
+             "id": 4,
+
+             "raekkeid": 3,
+
+             "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+
+
+
+
+                {
+
+                    "id": 5,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+
+
+
+
+                    {
+
+                        "id": 6,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+
+
+
+
+                {
+
+                    "id": 7,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+
+
+
+
+                    {
+
+                        "id": 8,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+
+
+
+
+                {
+
+                    "id": 9,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+
+
+
+
+                    {
+
+                        "id":10,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+
+
+
+
+
+                {
+
+                    "id": 11,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+
+
+
+
+
+                    {
+
+                        "id": 12,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+                    {
+
+                        "id": 13,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+                    {
+
+                        "id": 14,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+                {
+
+                    "id": 15,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+                },
+                    {
+
+                        "id": 16,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+                {
+
+                    "id": 17,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+                    {
+
+                        "id":18,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+                    },
+
+
+
+
+                {
+
+                    "id": 19,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+
+
+
+
+         {
+
+                        "id": 20,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+        },
+
+        {
+
+                    "id": 21,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+                },
+
+        {
+
+                        "id": 22,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+         },
+
+         {
+
+                    "id": 23,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+          },
+
+          {
+
+                        "id": 24,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+         },
+
+         {
+
+                    "id": 25,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+         },         
+
+           {
+
+                        "id": 26,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+           },
+
+           {
+
+                    "id": 27,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+           }, 
+
+           {
+
+                        "id": 28,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+            },  
+
+            {
+
+                    "id": 29,
+
+                    "raekkeid": 3,
+
+                    "saedestatus": "ledig",
+
+                    "ordreid":null
+
+           },
+
+           {
+
+                        "id": 30,
+
+                        "raekkeid": 3,
+
+                        "saedestatus": "ledig",
+
+                        "ordreid":null
+
+            },
+
+            {
+
+                "id": 32,
+
+                "raekkeid": 3,
+
+                "saedestatus": "ledig",
+
+                "ordreid":null
+
+            },
+
+            {
+
+            "id": 33,
+
+            "raekkeid": 3,
+
+            "saedestatus": "ledig",
+
+            "ordreid":null
+
+            }
+
+        ]
+
+}
