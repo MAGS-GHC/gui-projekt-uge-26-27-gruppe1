@@ -4,6 +4,7 @@
   "main": "server.js",
   "author": "mojc",
   "private": false,
+  "license": "mit",
   "dependencies": {
     "bookshelf": "^1.2.0",
     "bookshelf-virtuals-plugin": "^1.0.0",
