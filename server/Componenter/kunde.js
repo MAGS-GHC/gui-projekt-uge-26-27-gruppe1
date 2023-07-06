@@ -1,4 +1,4 @@
-const handleRegister = async (req, res, User, jwt, dotenv, knexDb) => {
+const opretKundeBruger = async (req, res, User, jwt, dotenv, knexDb) => {
     dotenv.config();
     const { email, navn, password, adresse, postnr, mobil, brugernavn } = req.body;
     if (!email || !navn) {
@@ -26,16 +26,16 @@ const handleRegister = async (req, res, User, jwt, dotenv, knexDb) => {
 
     const m = 'email';
     const b = 'brugernavn'
-    const where = (first, second) => knexDb('login_user').where(first, '=', second);
+    const where = (first, second) => knexDb('kunde').where(first, '=', second);
     const response = (reply, user) => res.status(409).send(reply + user);
 
-    where(m, email).then((brugermail) => {
-        if (brugermail.length != 0) {
-            return response('mail ', JSON.stringify(brugermail[0].email))
+    where(b, brugernavn).then((bruger) => {
+        if (bruger.length != 0) {
+            return response('brugernavn ', JSON.stringify(bruger[0].brugernavn))
         } else {
-            where(b, brugernavn).then((bruger) => {
-                if (bruger.length != 0) {
-                    return response('brugernavn ', JSON.stringify(bruger[0].brugernavn))
+            where(m, email).then((brugermail) => {
+                if (brugermail.length != 0) {
+                    return response('email ', JSON.stringify(brugermail[0].email))
                 } else {
                     try {
                         newUser()
@@ -53,5 +53,5 @@ const handleRegister = async (req, res, User, jwt, dotenv, knexDb) => {
 }
 
 module.exports = {
-    handleRegister
+    opretKundeBruger
 };
