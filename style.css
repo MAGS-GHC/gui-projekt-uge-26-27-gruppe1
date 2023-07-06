@@ -4,23 +4,32 @@ background-color: rgb(44, 40, 40);
 h1{
   color: #e9e1e1;
   text-align: center;
+
 }
+.buySelectedSeats:hover{
+background-color: #00685b;
+display:flex;
+top: 100px;
+left: 200px;
 
-
-
-
+}
 
 .seats-container {
     display: flex;
-    right: 0;
-    left: 0px;
+    border-top: 400px;
+    right: 1000px;
+    left: 100px;
+    padding-left: 0px;
+    padding-right: 1000px;
+    padding-top: 0px;
     flex-wrap: wrap;
     gap: 10px;
-} 
+    position:absolute;
+    text-align: center;
+}   
   
   .seat {
-    display: flex;
-    right: 0px;
+    
     width: 25px;
     height: 25px;
     background-color: lightgray;
@@ -41,8 +50,8 @@ h1{
     display: flex;
     width: 320px;
     height: 180px;
-    left: 418px;
-    top: 185px;
+    left: 222px;
+    top: 147px;
     position: absolute;
     transform: rotate(90deg);
     transform-origin: 0 0;
@@ -58,8 +67,8 @@ h1{
     background-color: rgb(190, 233, 183);
   }
   .M {
-    left: 300px;
-    top: 230px;
+    left: 110px;
+    top: 280px;
     position: absolute;
     color: white;
     font-size: 45px;
