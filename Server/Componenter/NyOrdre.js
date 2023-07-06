@@ -4,11 +4,10 @@ const opretetOrdre = (req, res, knex, dotenv) => {
     //const kunde = 'kunde'
     const ordre = 'ordre'
 
-    const { beloeb, ordrestatus, navn, email, antal } = req.body;
-    /*knex(kunde)
-        .insert(navn, email).then((kunde) => {*/
+    const { beloeb, ordrestatus, email, antal } = req.body;
+
     knex(ordre)
-        .insert({ navn, email, beloeb, antal, ordrestatus, madbillet: false })
+        .insert({ email, beloeb, antal, ordrestatus, madbillet: false })
         .then((result) => {
             res.status(200).send(result[0] + "")
         })
