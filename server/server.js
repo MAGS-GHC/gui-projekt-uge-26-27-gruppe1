@@ -8,12 +8,14 @@ const jwt = require('jsonwebtoken');
 
 const nodemailer = require('nodemailer');
 const inLineCss = require('nodemailer-juice');
-
+const bcrypt = require('bcrypt')
 const post = require('./Componenter/post');
 const NyOrdre = require('./Componenter/NyOrdre');
 const betaltbilletter = require('./Componenter/ordreBetalt');
 const hent = require('./Componenter/hentliste');
 const saede = require('./Componenter/opdaterSaeder');
+const kunde = require('./Componenter/kunde');
+const logind = require('./Componenter/login');
 
 const dbUsername = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
@@ -61,15 +63,16 @@ const sletmidlertidigbruger = () => {
     console.log('bøh')
 }
 
-setInterval(sletmidlertidigbruger, 36000000)//10 timer
+//setInterval(sletmidlertidigbruger, 36000000)//10 timer
 
 const PORT = process.env.PORT || 3001;
 
 app.use(express.static(__dirname, {
-    extensions: ["html", "htm", "gif", "png"],
+    extensions: ["html", "htm", "gif", "png", "css"],
 }));
 
-app.get('/', (req, res) => {
+const serverPath = '/vff'
+app.get(serverPath + '/', (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
 
@@ -88,14 +91,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const serverPath = '/vff'
 
 //til bruger login
 const auth = passport.authenticate('jwt', { session: false });
 
-app.post(serverPath + '/newuser', auth, async (req, res) => { register.handleRegister(req, res, User, jwt, dotenv, knexDb, fileName) });//opret bruger
+app.post(serverPath + '/newuser', async (req, res) => { kunde.opretKundeBruger(req, res, User, jwt, dotenv, knexDb) });//opret bruger
 
-app.post(serverPath + '/login', (req, res) => { signin.handleSignin(req, res, knexDb, bcrypt, jwt, dotenv) });//login
+app.post(serverPath + '/login', (req, res) => { logind.bugerlogind(req, res, knexDb, bcrypt, jwt, dotenv) });//login
 
 app.post(serverPath + '/opretsaeder', (req, res) => { post.handleTablePosts(req, res, knexDb, jwt, dotenv) })//opret sæder
 

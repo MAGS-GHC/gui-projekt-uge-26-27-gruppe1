@@ -1,9 +1,12 @@
 // Klassen af sæder 
+const BaseUrl = 'https://www.itsmurf-servers.dk/vff'
 let stadion;
 class Seat {
-  constructor(id, price, saedestatus) {
+  constructor(id, price, saedestatus, raekkeid) {
     this.id = id;
     this.price = price;
+    this.saedestatus = saedestatus;
+    this.raekkeid = raekkeid;
     this.booked = false;
     this.element = this.createSeatElement();
     this.element.addEventListener("click", () => this.toggleBooking());
@@ -16,25 +19,25 @@ class Seat {
   }
 
   toggleBooking() {
-    if (this.booked) {
-      console.log(`Seat ${this.id} is already booked.`);
+    if (this.booked, this.saedestatus === "optaget") {
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is already booked.`);
       return;
     }
 
     if (this.selected) {
       this.selected = false;
       this.element.classList.remove("selected");
-      console.log(`Seat ${this.id} is deselected.`);
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is deselected.`);
     } else {
       this.selected = true;
       this.element.classList.add("selected");
-      console.log(`Seat ${this.id} is selected. Price: ${this.price}.`);
+      console.log(`Seat: ${this.id} Row: ${this.raekkeid} is selected. Price: ${this.price}. Availabilty: ${this.saedestatus}`);
     }
   }
 
   bookSeat() {
-    if (this.booked) {
-      console.log(`Seat ${this.id} is already booked.`);
+    if (this.booked, this.saedestatus === "optaget") {
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is already booked.`);
       return;
     }
 
@@ -43,7 +46,8 @@ class Seat {
       this.selected = false;
       this.element.classList.remove("selected");
       this.element.classList.add("booked");
-      console.log(`Seat ${this.id} is booked.`);
+      updateSeatStatus(this.id, 'optaget', this.raekkeid)
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is booked.`);
     } else {
       console.log(`Seat ${this.id} is not selected.`);
     }
@@ -65,8 +69,8 @@ class Stadion {
 
   createSeats(seatsData) {
     for (const seatData of seatsData) {
-      const { id, price, saedestatus } = seatData;
-      const seat = new Seat(id, price, saedestatus);
+      const { id, price, saedestatus, raekkeid } = seatData;
+      const seat = new Seat(id, price, saedestatus, raekkeid);
       this.seats.push(seat);
     }
   }
@@ -110,7 +114,7 @@ let seatsData = []
 //let stadion;
 //henter sæder
 async function HentSaeder() {
-  const url = "https://www.itsmurf-servers.dk/vff/hentsaeder";
+  const url = `${BaseUrl}/hentsaeder`;
   var req = new Request(url);
   const response = await fetch(req);
   Objekt = await response.json();
@@ -123,27 +127,29 @@ async function HentSaeder() {
 
 HentSaeder()
 
-async function Opdatersaeder(saedeid, saedestatus, ordreid) {
-  const url = "https://www.itsmurf-servers.dk/vff/opdatersaeder" + saedeid;
+async function updateSeatStatus(seatId, newStatus, raekkeid) {
+  const url = `${BaseUrl}/opdatersaeder/${seatId}`;
+  const requestData = {
+    raekkeid: raekkeid,
+    saedestatus: newStatus
+  };
 
-  const data = {
-    "saedestatus": saedestatus,
-    "ordreid": ordreid
-  }
-
-  var req = new Request(url);
-  const response = await fetch(req, {
-    Method: 'PUT',
-    Headers: {
-      Accept: 'application.json',
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
       'Content-Type': 'application/json'
     },
-    Body: data
+    body: JSON.stringify(requestData)
   });
-  const responseData = await response.json();
+
+  if (response.ok) {
+    console.log(`Seat ${seatId} status updated successfully.`);
+  } else {
+    console.log(`Failed to update seat ${seatId} status.`);
+  }
 }
 
-async function Bestilsaeder(saedeid, beloeb, antal, saedestatus, ordrestatus, navn, email) {
+/*/ async function Bestilsaeder(saedeid, beloeb, antal, saedestatus, ordrestatus, navn, email) {
   const url = "https://www.itsmurf-servers.dk/vff/nyordre";
 
   const data = {
@@ -168,7 +174,7 @@ async function Bestilsaeder(saedeid, beloeb, antal, saedestatus, ordrestatus, na
   Opdatersaeder(saedeid, saedestatus, responseData)
   //stadion.createSeats()
 }
-
+*/
 // Laver en instans af stadion klassen
 
 
