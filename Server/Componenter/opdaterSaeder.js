@@ -2,10 +2,13 @@ const opdatersaede = (req, res, knex, dotenv) => {
     dotenv.config()
     const saede = 'saede'
 
-    const { saedestatus, ordreid } = req.body;
+    const { saedestatus, ordreid, raekkeid } = req.body;
     const { saedeid } = req.params;
 
-    knex(saede).where('id', '=', saedeid).update({
+    knex(saede).where({
+        raekkeid: raekkeid,
+        id: saedeid
+    }).update({
         saedestatus,
         ordreid
     }).then((result) => {

@@ -6,6 +6,7 @@
   "private": false,
   "license": "mit",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bookshelf": "^1.2.0",
     "bookshelf-virtuals-plugin": "^1.0.0",
     "cors": "^2.8.5",
