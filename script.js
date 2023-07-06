@@ -114,7 +114,7 @@ let seatsData = []
 //let stadion;
 //henter sæder
 async function HentSaeder() {
-  const url = `${BaseUrl}/hentsaeder/${seatId}`;
+  const url = `${BaseUrl}/hentsaeder`;
   var req = new Request(url);
   const response = await fetch(req);
   Objekt = await response.json();
