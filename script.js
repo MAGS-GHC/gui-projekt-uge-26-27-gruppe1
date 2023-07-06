@@ -81,12 +81,13 @@ class Stadion {
     return this.seats.filter((seat) => seat.selected);
   }
 
-  checkSeatAvailability(seatId) {
-    const seat = this.seats.find((seat) => seat.id === seatId);
-    if (seat) {
-      return !seat.booked;
-    }
-    return false;
+  checkSeatAvailability() {
+    const seat = this.seats.map((seat) => {
+      if (seat.saedestatus === 'optaget') {
+        return this.element.classList.add("booked");
+      }
+    });
+    return seat;
   }
 
   getSeatPrice(seatId) {
