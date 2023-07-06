@@ -60,17 +60,20 @@
   #kamp-container{
     background-color:rgb(28, 149, 12);
   }
-  #kHeader{
+  #navB{
     background-color: white;
     border-bottom:1px solid;
     border-color: rgb(28, 149, 12);
-  }
-  #kHeader a{
-    text-decoration: none;
-    color: rgb(28, 149, 12);
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
   }
-  #kHeader a:hover{
+  #navB a{
+    text-decoration: none;
+    color: rgb(28, 149, 12);
+   
+    margin-left:5px;
+  }
+  #navB a:hover{
     text-decoration: none;
     color: grey;
     font-family: Arial, Helvetica, sans-serif;
