@@ -61,15 +61,16 @@ const sletmidlertidigbruger = () => {
     console.log('bøh')
 }
 
-setInterval(sletmidlertidigbruger, 36000000)//10 timer
+//setInterval(sletmidlertidigbruger, 36000000)//10 timer
 
 const PORT = process.env.PORT || 3001;
 
 app.use(express.static(__dirname, {
-    extensions: ["html", "htm", "gif", "png"],
+    extensions: ["html", "htm", "gif", "png", "css"],
 }));
 
-app.get('/', (req, res) => {
+const serverPath = '/vff'
+app.get(serverPath + '/', (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
 
@@ -88,7 +89,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const serverPath = '/vff'
 
 //til bruger login
 const auth = passport.authenticate('jwt', { session: false });
