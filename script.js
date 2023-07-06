@@ -19,24 +19,24 @@ class Seat {
 
   toggleBooking() {
     if (this.booked, this.saedestatus === "optaget") {
-      console.log(`Seat ${this.id} Row:${this.raekkeid} is already booked.`);
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is already booked.`);
       return;
     }
 
     if (this.selected) {
       this.selected = false;
       this.element.classList.remove("selected");
-      console.log(`Seat ${this.id} is deselected.`);
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is deselected.`);
     } else {
       this.selected = true;
       this.element.classList.add("selected");
-      console.log(`Seat: ${this.id} Row:${this.raekkeid} is selected. Price: ${this.price}. Availabilty: ${this.saedestatus}`);
+      console.log(`Seat: ${this.id} Row: ${this.raekkeid} is selected. Price: ${this.price}. Availabilty: ${this.saedestatus}`);
     }
   }
 
   bookSeat() {
     if (this.booked, this.saedestatus === "optaget") {
-      console.log(`Seat ${this.id} Row:${this.raekkeid} is already booked.`);
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is already booked.`);
       return;
     }
 
