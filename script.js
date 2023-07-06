@@ -1,3 +1,7 @@
+function openWindow() {
+  HentSaeder()
+  var bookSeats = document.createElement("div");
+}
 // Klassen af sæder 
 const BaseUrl = 'https://www.itsmurf-servers.dk/vff'
 let stadion;
@@ -125,7 +129,7 @@ async function HentSaeder() {
   return seatsData
 }
 
-HentSaeder()
+
 
 async function updateSeatStatus(seatId, newStatus, raekkeid) {
   const url = `${BaseUrl}/opdatersaeder/${seatId}`;
