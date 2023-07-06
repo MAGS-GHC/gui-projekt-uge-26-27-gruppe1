@@ -1,0 +1,26 @@
+*{
+    text-align: center;
+    
+}
+#seats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .seat {
+    width: 25px;
+    height: 25px;
+    background-color: lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .seat.selected {
+    background-color: blue;
+  }
+  
+  .seat.booked {
+    background-color: red;
+  }
+  
