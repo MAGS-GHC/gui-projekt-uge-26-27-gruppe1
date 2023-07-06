@@ -11,12 +11,16 @@ h1{
 
 
 .seats-container {
-    display: flexbox;
+    display: flex;
+    right: 0;
+    left: 0px;
     flex-wrap: wrap;
     gap: 10px;
 } 
   
   .seat {
+    display: flex;
+    right: 0px;
     width: 25px;
     height: 25px;
     background-color: lightgray;
@@ -34,10 +38,11 @@ h1{
   
   .SektionM{
     background-color: #00685b; /* Green - kører samme farve og placering som Stadion.png*/
+    display: flex;
     width: 320px;
     height: 180px;
     left: 418px;
-    top: 110px;
+    top: 185px;
     position: absolute;
     transform: rotate(90deg);
     transform-origin: 0 0;

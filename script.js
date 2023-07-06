@@ -1,3 +1,7 @@
+function openWindow() {
+  HentSaeder()
+  var bookSeats = document.createElement("div");
+}
 // Klassen af sæder 
 let stadion;
 class Seat {
@@ -121,7 +125,7 @@ async function HentSaeder() {
   return seatsData
 }
 
-HentSaeder()
+
 
 async function Opdatersaeder(saedeid, saedestatus, ordreid) {
   const url = "https://www.itsmurf-servers.dk/vff/opdatersaeder" + saedeid;
