@@ -1,7 +1,8 @@
 // Klassen af sæder 
+const BaseUrl = 'https://www.itsmurf-servers.dk/vff'
 let stadion;
 class Seat {
-  constructor(id, price, saedestatus,raekkeid) {
+  constructor(id, price, saedestatus, raekkeid) {
     this.id = id;
     this.price = price;
     this.saedestatus = saedestatus;
@@ -113,7 +114,7 @@ let seatsData = []
 //let stadion;
 //henter sæder
 async function HentSaeder() {
-  const url = "https://www.itsmurf-servers.dk/vff/hentsaeder";
+  const url = `${BaseUrl}/hentsaeder/${seatId}`;
   var req = new Request(url);
   const response = await fetch(req);
   Objekt = await response.json();
@@ -127,7 +128,7 @@ async function HentSaeder() {
 HentSaeder()
 
 async function updateSeatStatus(seatId, newStatus, raekkeid) {
-  const url = `https://www.itsmurf-servers.dk/vff/opdatersaeder/${seatId}`;
+  const url = `${BaseUrl}/opdatersaeder/${seatId}`;
   const requestData = {
     raekkeid: raekkeid,
     saedestatus: newStatus
