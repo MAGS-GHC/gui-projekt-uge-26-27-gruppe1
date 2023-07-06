@@ -44,15 +44,18 @@
   }
   /*styling af tabel*/
   #kamp table{
-    margin-left:40%;
+    margin-left:25%;
+    margin-right: 25%;
+    width: 50%;
     border:2px;
     border-color:rgb(28, 149, 12);
     
     border-style:solid;
   }
   #kamp-container  table, td{  
-    padding: 5px;
-    
+    padding:5px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
   }
   #kamp-container{
     background-color:rgb(28, 149, 12);
@@ -61,4 +64,14 @@
     background-color: white;
     border-bottom:1px solid;
     border-color: rgb(28, 149, 12);
+  }
+  #kHeader a{
+    text-decoration: none;
+    color: rgb(28, 149, 12);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #kHeader a:hover{
+    text-decoration: none;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
   }
