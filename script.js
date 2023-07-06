@@ -19,7 +19,7 @@ class Seat {
 
   toggleBooking() {
     if (this.booked, this.saedestatus === "optaget") {
-      console.log(`Seat ${this.id} is already booked.`);
+      console.log(`Seat ${this.id} Row:${this.raekkeid} is already booked.`);
       return;
     }
 
@@ -36,7 +36,7 @@ class Seat {
 
   bookSeat() {
     if (this.booked, this.saedestatus === "optaget") {
-      console.log(`Seat ${this.id} is already booked.`);
+      console.log(`Seat ${this.id} Row:${this.raekkeid} is already booked.`);
       return;
     }
 
@@ -46,7 +46,7 @@ class Seat {
       this.element.classList.remove("selected");
       this.element.classList.add("booked");
       updateSeatStatus(this.id, 'optaget', this.raekkeid)
-      console.log(`Seat ${this.id} is booked.`);
+      console.log(`Seat ${this.id} Row: ${this.raekkeid} is booked.`);
     } else {
       console.log(`Seat ${this.id} is not selected.`);
     }
