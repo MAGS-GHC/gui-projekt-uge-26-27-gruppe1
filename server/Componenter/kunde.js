@@ -4,7 +4,7 @@ const opretKundeBruger = async (req, res, User, jwt, dotenv, knexDb) => {
     if (!email || !navn) {
         return res.status(401).send('no fields');
     }
-    //Math.random().toString(36).substring(2, 8)
+
     const newUser = async () => {
         const user = new User({
             navn: navn,
